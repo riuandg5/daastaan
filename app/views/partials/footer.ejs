@@ -1,0 +1,9 @@
+	<div class="footer">
+        <% if(currentUser){ %>
+        	<a href="/admin/<%= currentUser._id %>/profile" title="See profile"><%= currentUser.username %></a>
+        	<a href="/signout" title="Signout">SignOut</a>
+        <% } %>
+        <a href="https://github.com/riuandg5/daastaan" title="See Github Repo">Made by REU <i class="fab fa-github"></i></a>
+  	</div>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<% include ./partials/header %>
+<div class="navbar">
+    <a class="nav-left" href="/posts" title="Goto home">Home</a>
+    <% if(currentUser){ %>
+        <a class="nav-right" href="/admin/<%= currentUser._id %>/profile" title="See profile"><%= currentUser.username %></a>
+    <% } %>
+</div>
+<div class="post-container">
+    <div class="center-column">
+        <div id="about-me" class="post">
+            <div class="show-left">
+                <h3><i class="fas fa-address-card"></i> Admin Card</h3>
+                <img class="author-img" src="<%= currentUser.dplink %>">
+                <p><em><%= currentUser.username %></em></p>
+            </div>
+            <div class="show-right">
+                <p><em><%= currentUser.bio %></em></p>
+            </div>
+        </div>
+        <a href="/admin/<%= currentUser._id %>/profile/update"><div>Edit</div></a>
+    </div>
+</div>
+<% include ./partials/footer %>

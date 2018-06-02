@@ -1,0 +1,25 @@
+<% include ./partials/header %>
+<div class="navbar">
+    <a class="nav-left" href="/posts" title="Goto home">Home</a>
+    <p class="nav-right">NewPost</p>
+</div>
+<div class="form-container">
+    <form action="/posts/new" method="POST">
+        <div class="field">
+            <h2>Title of the post :</h2>
+            <input type="text" name="post[title]" placeholder="new post">
+        </div>
+        <div class="field">
+            <h2>URL of the image :</h2>
+            <input type="text" name="post[image]" placeholder="https://www.anyimage.com">
+        </div>
+        <div class="field">
+            <h2>Content of the post :</h2>
+            <textarea name="post[body]"></textarea>
+            <p>* You can use basic html stylings.</p>
+        </div>
+        <input type="submit" value="Create Post">
+        <a href="/posts"><div>Cancel</div></a>
+    </form>
+</div>
+<% include ./partials/footer %>

@@ -1,0 +1,229 @@
+*{
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    font-family: 'Kalam', cursive;
+}
+p{
+    font-size: 1.2em;
+}
+a{
+    color: blue;
+}
+.blog-head, .new-head{
+    padding: 1% 5%;
+    font-size: 2.5em;
+    text-align: center;
+    background-color: #E0F2F1;
+    color: #424242;
+}
+.new-head{
+    padding: 50px 5%;
+    background-color: #00897B;
+    color: white;
+}
+.navbar{
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    overflow: hidden;
+    background-color: #00897B;
+    padding: 0 5%;
+    z-index: 99;
+}
+.navbar a, .navbar p, .footer a{
+    display: block;
+    color: white;
+    text-align: center;
+    font-size: 2em;
+    padding: 0px 15px;
+    text-decoration: none;
+}
+.navbar a:hover, .footer a:hover{
+    background-color: white;
+    color: #00897B;
+}
+.nav-left{
+    float: left;
+}
+.nav-right{
+    float: right;
+}
+.nav-center{
+    -ms-flex-item-align: center;
+        -ms-grid-row-align: center;
+        align-self: center;
+}
+.post-container{
+    background: #B2DFDB;
+    padding: 0 5% 20px 5%;
+}
+.form-container{
+    background: #B2DFDB;
+    padding: 20px 5%;
+}
+form{
+    border: 2px solid white;
+    padding: 2% 5%;
+    border-radius: 2%;
+}
+form .field{
+    padding: 2% 0;
+}
+form input[type=text], input[type=password], textarea{
+    width: 100%;
+    border: none;
+    padding: 1% 2%;
+    font-size: 1.2em;
+}
+form textarea{
+    height: 15em;
+    padding: 2%;
+    resize: vertical;
+    font-family: none;
+}
+form input[type=submit], form a div, .show-form a div, .show-form button{
+    width: 100%;
+    font-size: 1.8em;
+    border: none;
+    text-align: center;
+    margin-bottom: 2%;
+    background-color: dodgerblue;
+    color: white;
+    cursor: pointer;
+}
+.show-form{
+    background-color: #B2DFDB;
+}
+.show-form form{
+    border: none;
+    padding: 0 5%;
+}
+form a div, .show-form button{
+    background-color: red;
+}
+.left-column{
+    float: left;
+    width: 60%;
+    background-color: #B2DFDB;
+}
+.right-column{
+    position: -webkit-sticky;
+    position: sticky;
+    top: 30px;
+    float: left;
+    width: 40%;
+    background-color: #B2DFDB;
+    padding-left: 20px;
+}
+.center-column{
+    float: left;
+    width: 100%;
+    background-color: #B2DFDB;
+}
+.center-column a div{
+    width: 100%;
+    font-size: 1.8em;
+    border: none;
+    margin-top: 2%;
+    text-align: center;
+    background-color: dodgerblue;
+    color: white;
+    cursor: pointer;
+}
+.post{
+    position: relative;
+    background-color: rgba(255,255,255,0.8);
+    color: #004D40;
+    padding: 3%;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+.post h1 a{
+    color: #424242;
+}
+.post-container:after{
+    content: "";
+    display: table;
+    clear: both;
+}
+.share-me{
+    position: absolute;
+    top: 0.1em;
+    right: 1%;
+    color: #00897B;
+    font-size: 1.2em;
+    text-decoration: none;
+}
+.post-img{
+    width: 100%;
+    margin: 10px auto;
+    border-radius: 5px;
+}
+.show-left{
+    width: 40%;
+    float: left;
+    text-align: center;
+}
+.show-right{
+    width: 60%;
+    padding-left: 10px;
+    float: right;
+    text-align: center;
+}
+.author-img{
+    margin: 5px auto;
+    width: 125px;
+    height: 125px;
+}
+#about-me{
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+}
+#popular-post a{
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    background-color: #F8BBD0;
+    color: black;
+    border-radius: 5px;
+    padding: 5px;
+    margin-top: 5px;
+}
+.footer{
+    position: relative;
+    bottom: 0;
+    padding: 20px;
+    text-align: center;
+    background-color: #00897B;
+    color: white;
+}
+@media(max-width: 430px){
+    .navbar .new-post{
+        float: right;
+    }
+}
+@media(max-width: 768px){
+    .blog-head, .new-head{
+        font-size: 2em;
+    }
+    .left-column{   
+        width: 100%;
+        padding: 0;
+    }
+    .right-column{
+        width: 100%;
+        padding: 0;
+    }
+    .right-column .post{
+        width: 100%;
+        height: auto;
+    }
+}

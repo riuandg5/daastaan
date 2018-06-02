@@ -1,0 +1,26 @@
+<% include ./partials/header %>
+<div class="navbar">
+    <a class="nav-left" href="/posts">Home</a>
+</div>
+<div class="post-container">
+    <div class="center-column">
+        <div id="<%= post._id %>" class="post">
+            <a class="share-me" href="https://api.whatsapp.com/send?text=Hey! Checkout this awesome post... <%= post.title %> at http://daastaan.us.openode.io/posts/<%= post._id %>" title="Share on WhatsApp"><i class="fas fa-share-alt"></i></a>
+            <h1><%= post.title%></h1>
+            <h4>Updated at: <%= post.created.toDateString() %></h4>
+            <img class="post-img" src="<%= post.image %>">
+            <p><%- post.body %></p>
+        </div>
+    </div>
+</div>
+<div class="show-form">
+<% if(currentUser){ %>
+    <% if(currentUser._id.equals(post.owner)){ %>
+        <form action="/posts/<%= post._id %>?_method=DELETE" method="POST">
+            <a href="/posts/<%= post._id %>/edit"><div>Edit</div></a>
+            <button>Delete</button>
+        </form>
+    <% } %>
+<% } %>
+</div>
+<% include ./partials/footer %>

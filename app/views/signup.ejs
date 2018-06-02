@@ -1,0 +1,22 @@
+<% include ./partials/header %>
+<div class="navbar">
+    <p class="nav-center">New Admin</p>
+</div>
+<div class="form-container">
+    <form action="/signup/admin/new" method="POST">
+        <div class="field">
+            <input type="text" name="username" placeholder="Username" autocomplete="off" required>
+        </div>
+        <div class="field">
+            <input type="password" name="password" placeholder="Password" pattern="[A-Za-z0-9]{5,}" title="Password should contain atleast 5 characters and no special character is allowed!" required>
+        </div>
+        <div class="field">
+            <input type="text" name="dplink" placeholder="Link of your profile picture" autocomplete="off" required>
+        </div>
+        <div class="field">
+            <textarea name="bio" placeholder="Write something about yourself..." autocomplete="off" required></textarea>
+        </div>
+        <input type="submit" value="Register">
+    </form>
+</div>
+<% include ./partials/footer %>

@@ -1,0 +1,42 @@
+<% include ./partials/header %>
+<div class="navbar">
+    <a class="nav-left" href="/posts" title="Goto home">Home</a>
+    <% if(currentUser){ %>
+        <a class="nav-right new-post" href="/posts/new" title="Create new post">NewPost</a>
+    <% } else { %>
+        <a class="nav-right" href="/signin" title="Only admin can signin">Admin</a>
+    <% } %>
+</div>
+<div class="post-container">
+    <div class="left-column">
+    <% posts.sort(function(a, b){return b.created - a.created}).forEach(function(post){ %>
+        <div id="<%= post._id %>" class="post">
+            <a class="share-me" href="https://api.whatsapp.com/send?text=Hey! Checkout this awesome post... <%= post.title %> at http://daastaan.us.openode.io/posts/<%= post._id %>" title="Share on WhatsApp"><i class="fas fa-share-alt"></i></a>
+            <h1><a href="/posts/<%= post._id %>"><%= post.title%></a></h1>
+            <h4>Updated at: <%= post.created.toDateString() %></h4>
+            <img class="post-img" src="<%= post.image %>">
+            <p><%- post.body.substring(0, 110) %>...
+            <a href="/posts/<%= post._id %>">Read More</a></p>
+        </div>
+    <% }) %>
+    </div>
+    <div class="right-column">
+        <% admins.forEach(function(admin){ %>
+            <div id="about-me" class="post">
+                <div class="show-left">
+                    <h3><i class="fas fa-address-card"></i> Admin Card</h3>
+                    <img class="author-img" src="<%= admin.dplink %>">
+                    <p><em><%= admin.username %></em></p>
+                </div>
+                <div class="show-right">
+                    <p><em><%= admin.bio %></em></p>
+                </div>
+            </div>
+        <% }) %>
+        <!-- <div id="popular-post" class="post">
+            <h3>Popular Post</h3>
+            <a href="/posts/postid">postname</a>
+        </div> -->
+    </div>
+</div>
+<% include ./partials/footer %>

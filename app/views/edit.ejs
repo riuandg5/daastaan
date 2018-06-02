@@ -1,0 +1,25 @@
+<% include ./partials/header %>
+<div class="navbar">
+    <a class="nav-left" href="/posts">Home</a>
+    <p class="nav-right">EditPost</p>
+</div>
+<div class="form-container">
+    <form action="/posts/<%= post._id %>?_method=PUT" method="POST">
+        <div class="field">
+            <h2>Title of the post :</h2>
+            <input type="text" name="post[title]" value="<%= post.title %>">
+        </div>
+        <div class="field">
+            <h2>URL of the image :</h2>
+            <input type="text" name="post[image]" value="<%= post.image %>">
+        </div>
+        <div class="field">
+            <h2>Content of the post :</h2>
+            <textarea name="post[body]"><%= post.body %></textarea>
+            <p>* You can use basic html stylings.</p>
+        </div>
+        <input type="submit" value="Update Post">
+        <a href="/posts/<%= post._id %>"><div>Cancel</div></a>
+    </form>
+</div>
+<% include ./partials/footer %>
